@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Projects by Anthony Lin - Full-stack applications and Python games"
+    />
+    <meta name="theme-color" content="#071226" />
+    <title>Projects | Anthony Lin</title>
+    <!-- Google Fonts: Space Grotesk - geometric sans-serif with character -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link visually-hidden" href="#main-content"
+      >Skip to content</a
+    >
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-text">Loading</p>
+    </div>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container container">
+          <a href="index.html" class="nav-brand">Anthony Lin</a>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span class="hamburger"></span>
+          </button>
+          <ul
+            id="primary-navigation"
+            class="nav-menu"
+            role="menubar"
+            aria-label="Primary"
+          >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="content-section container">
+        <h1>Projects</h1>
+
+        <!-- 
+                Project grid layout - AI suggested CSS Grid with 3 columns
+                I chose this over Flexbox for better alignment and equal card heights
+                Each card structure is similar but content is unique to each project
+            -->
+        <div class="projects-grid">
+          <!-- Active projects from resume -->
+          <article class="project-card">
+            <img
+              src="assets/images/gsa-housing.jpg"
+              alt="GSA Housing Review website screenshot"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>GSA Housing Review Website</h2>
+            <p>
+              Full-stack housing review platform for CMU graduate students.
+              Architected property listings feature and database schema to
+              promote housing transparency across campus.
+            </p>
+            <p class="tech-stack">
+              Next.js, TypeScript, Tailwind CSS, PostgreSQL, Supabase
+            </p>
+            <a
+              href="https://github.com/ScottyLabs"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Scotty Labs →</a
+            >
+          </article>
+
+          <article class="project-card">
+            <img
+              src="assets/images/pygame-td.jpg"
+              alt="Pygame tower defense screenshot"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>Pygame Tower Defense</h2>
+            <p>
+              Complete 2D tower defense game featuring multiple tower types,
+              upgrade paths, and wave-based enemy logic. Built an OOP framework
+              managing Tower, Enemy, and Projectile classes.
+            </p>
+            <p class="tech-stack">
+              Python, Pygame, Object-Oriented Design, JSON
+            </p>
+            <a
+              href="https://github.com/anthonylin901"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on GitHub →</a
+            >
+          </article>
+
+          <article class="project-card">
+            <img
+              src="assets/images/homeless-analysis.jpg"
+              alt="Data analysis charts"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>Homeless Population Analysis</h2>
+            <p>
+              Statistical analysis and prediction model of homeless populations
+              using logistic regression, business cycle modeling, and
+              simulation-based forecasting.
+            </p>
+            <p class="tech-stack">MATLAB, Java, Statistical Modeling, Desmos</p>
+            <a
+              href="https://github.com/anthonylin901"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on GitHub →</a
+            >
+          </article>
+
+          <!-- This portfolio project -->
+          <article class="project-card">
+            <img
+              src="assets/images/portfolio-screenshot.jpg"
+              alt="Personal portfolio screenshot"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>Personal Portfolio Website</h2>
+            <p>
+              This website! Built with vanilla HTML, CSS, and JavaScript.
+              Focused on performance, accessibility, and responsive design
+              without frameworks. Deployed on GitHub Pages.
+            </p>
+            <p class="tech-stack">HTML, CSS, JavaScript, GitHub Pages</p>
+            <a
+              href="https://github.com/anthonylin901/portfolio"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Source Code →</a
+            >
+          </article>
+
+          <!-- Placeholder projects for future work -->
+          <article class="project-card project-placeholder">
+            <img
+              src="assets/images/iot-weather.jpg"
+              alt="IoT weather station mockup"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>Coming Soon: IoT Weather Station</h2>
+            <p>
+              Raspberry Pi-based weather monitoring system with real-time data
+              visualization and cloud storage integration. Currently in planning
+              phase.
+            </p>
+            <p class="tech-stack">Raspberry Pi, Python, Flask, SQLite</p>
+            <span class="project-link">In Development</span>
+          </article>
+
+          <article class="project-card project-placeholder">
+            <img
+              src="assets/images/alg-visualizer.jpg"
+              alt="Algorithm visualizer mockup"
+              class="project-thumb"
+              loading="lazy"
+            />
+            <h2>Coming Soon: Algorithm Visualizer</h2>
+            <p>
+              Interactive web application for visualizing sorting and
+              pathfinding algorithms. Educational tool for understanding
+              computational complexity.
+            </p>
+            <p class="tech-stack">JavaScript, HTML Canvas, CSS</p>
+            <span class="project-link">Planning Stage</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-content container">
+        <p>&copy; 2024 Anthony Lin. All rights reserved.</p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/anthonylin901"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/anthony-lin-25a949337"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

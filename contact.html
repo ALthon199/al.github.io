@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Personal portfolio of Anthony Lin - ECE Student and Developer at Carnegie Mellon University"
+      content="Contact Anthony Lin - ECE student at CMU, reach out via email or social media"
     />
     <meta name="theme-color" content="#071226" />
-    <title>Home | Anthony Lin</title>
+    <title>Contact | Anthony Lin</title>
     <!-- Google Fonts: Space Grotesk - geometric sans-serif with character -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +30,6 @@
     <a class="skip-link visually-hidden" href="#main-content"
       >Skip to content</a
     >
-    <!-- Loading screen - fades out after page loads -->
     <div class="loader-wrapper">
       <div class="loader">
         <div class="loader-dot"></div>
@@ -39,16 +38,10 @@
       </div>
       <p class="loader-text">Loading</p>
     </div>
-
-    <!-- 
-        Navigation bar - sticky positioning keeps it visible while scrolling
-        AI was used to generate the initial HTML structure, then customized for accessibility
-    -->
     <header>
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container container">
           <a href="index.html" class="nav-brand">Anthony Lin</a>
-          <!-- Hamburger menu for mobile - toggle functionality in main.js -->
           <button
             class="nav-toggle"
             aria-label="Toggle navigation"
@@ -63,55 +56,55 @@
             role="menubar"
             aria-label="Primary"
           >
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <main id="main-content" role="main">
-      <!-- Hero section - centered vertically using flexbox -->
-      <section class="hero" role="region" aria-labelledby="hero-heading">
-        <div class="container">
-          <div class="hero-inner">
-            <img
-              src="assets/images/profile.jpg"
-              alt="Anthony Lin headshot"
-              class="profile-photo"
-              loading="lazy"
-            />
+      <section class="content-section container">
+        <h1>Get In Touch</h1>
 
-            <div class="hero-text">
-              <h1 id="hero-heading">Hi, I'm Anthony Lin</h1>
-              <p class="hero-description">
-                ECE student at Carnegie Mellon University building full-stack
-                applications and exploring systems programming.
-              </p>
-              <div class="hero-links">
-                <a href="projects.html" class="btn btn-primary"
-                  >View Projects</a
-                >
-                <a
-                  href="https://github.com/anthonylin901"
-                  class="btn btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub</a
-                >
-              </div>
-            </div>
-          </div>
+        <p>
+          I'm always open to interesting conversations, collaboration
+          opportunities, or questions about my projects. Whether you want to
+          discuss full-stack development, systems programming, or opportunities
+          at CMU, feel free to reach out through any of the channels below.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:anthony6@andrew.cmu.edu" class="contact-link">
+            <h2>Email</h2>
+            <p>anthony6@andrew.cmu.edu</p>
+          </a>
+
+          <a
+            href="https://github.com/anthonylin901"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2>GitHub</h2>
+            <p>@anthonylin901</p>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/anthony-lin-25a949337"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2>LinkedIn</h2>
+            <p>/in/anthony-lin-25a949337</p>
+          </a>
         </div>
       </section>
     </main>
 
-    <!-- 
-        Footer appears on all pages - modified from AI template to match personal branding
-        Added proper rel attributes for security on external links
-    -->
     <footer role="contentinfo">
       <div class="footer-content container">
         <p>&copy; 2024 Anthony Lin. All rights reserved.</p>
