@@ -546,6 +546,7 @@ main {
   grid-template-columns: 1fr;
   gap: 1.25rem;
   margin-top: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 769px) {
@@ -567,8 +568,6 @@ main {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  /* Ensure consistent card heights for grid alignment */
-  min-height: 340px;
 }
 
 .project-card::before {
@@ -621,6 +620,7 @@ main {
   font-weight: 500;
   color: var(--accent);
   font-size: 0.95rem;
+  margin-top: auto;
 }
 
 .project-link:hover {
@@ -632,7 +632,8 @@ main {
 /* Project thumbnail styling */
 .project-thumb {
   width: 100%;
-  height: 140px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 0.875rem;
@@ -652,20 +653,29 @@ main {
 }
 
 /* Contact Links */
+
+/* Contact cards: grid layout with card-like anchors */
 .contact-links {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .contact-link {
-  padding: 1.5rem;
+  padding: 1.25rem;
   background-color: var(--bg-card);
   border-radius: var(--border-radius);
   border: 1px solid var(--border);
   transition: var(--transition);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align content to top */
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  min-height: 100px;
+  gap: 0.75rem;
 }
 
 .contact-link:hover {
@@ -682,6 +692,44 @@ main {
 .contact-link p {
   color: var(--text-secondary);
   margin-bottom: 0;
+}
+
+/* Icon inside contact card */
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  color: var(--accent);
+}
+
+.contact-body {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 769px) {
+  .contact-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact-link {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Resume link group on About page */
+.resume-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .contact-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Footer */
@@ -777,6 +825,81 @@ footer {
   margin-bottom: 1.5rem;
   border: 3px solid var(--border);
   object-fit: cover;
+}
+
+/* Work Experience cards (About page) */
+.work-experience {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.work-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.work-item h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.work-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Date and location row for work items */
+.work-meta-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.work-dates {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.work-location {
+  color: var(--text-secondary);
+  opacity: 0.95;
+}
+
+.work-item ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.work-item li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.work-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 769px) {
+  .work-experience {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 /* Mobile Styles */
