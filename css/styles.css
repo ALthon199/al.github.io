@@ -3,7 +3,6 @@
  * AI Usage Documentation:
  * - Initial CSS architecture generated using Claude AI
  * - Loading animation added with AI assistance for smooth page entry
- * - Color palette: https://coolors.co/1c0b19-140d4f-4ea699-2dd881-6fedb7
 
 
 /* CSS Variables */
@@ -66,6 +65,47 @@ body {
   line-height: 1.65;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+}
+
+/* Rotating animated background: subtle, blurred conic gradient */
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: conic-gradient(
+    from 200deg at 50% 50%,
+    rgba(45, 216, 129, 0.9),
+    rgba(78, 166, 153, 0.9),
+    rgba(191, 70, 50, 0.9),
+    rgba(8, 18, 35, 0.95)
+  );
+  opacity: 0.12;
+  filter: blur(60px) saturate(120%);
+  transform: scale(1.5) rotate(0deg);
+  transform-origin: 50% 50%;
+  animation: rotateBG 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateBG {
+  to {
+    transform: scale(1.5) rotate(360deg);
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    transform: scale(1.5) rotate(0deg);
+  }
 }
 
 /* Loading Animation */

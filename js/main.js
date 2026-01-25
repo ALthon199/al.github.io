@@ -8,9 +8,8 @@
  * - Added custom close-on-click-outside functionality after testing
  * - Smooth scroll behavior added based on AI recommendation
  * - Loading animation control added with AI assistance
- *
- * Purpose: Handles mobile menu toggle, smooth navigation, and page loading animation
- * No external libraries used - vanilla JavaScript only
+ * - Aniimations were made by Copilot based on my description
+
  */
 
 // Page Loading Animation
