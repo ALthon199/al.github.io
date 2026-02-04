@@ -131,6 +131,7 @@ body::before {
 .loader-wrapper.hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .loader {
@@ -350,6 +351,8 @@ a:hover {
 /* Main Content */
 main {
   min-height: calc(100vh - 200px);
+  position: relative;
+  z-index: 10;
 }
 
 /* Hero Section */
@@ -778,6 +781,8 @@ footer {
   /* full-width top divider to match navbar */
   border-top: 2px solid var(--border);
   margin-top: 4rem;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-content {

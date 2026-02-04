@@ -1,0 +1,29 @@
+# NASA APOD Widget - Key Prompts
+
+## AI Model: Claude Sonnet 4.5
+
+
+
+1. "I want to build a dynamic space widget for my portfolio website using the NASA APOD API"
+   Initiated what I wanted to implement to the AI
+
+2. "I would like the widget to replace the background"
+   A major website change.
+
+3. "It should be the background for all website pages"
+   Helped ensure that this change was across all pages
+
+4. "could you now dim the image"
+    Massively improved website design and overall look.
+
+5. "could you add little pop ups on the background for people to click to change backgrounds"
+   Created simple interactive elements across the website, as well as a good design.
+
+6. "Ensure the stars are not placed above text, projects cards, 
+    or anything besides the current space background. Ensure the stars 
+    are still clickable after."
+   Really good quality check, fixed a lot of small bugs.
+
+7. "Make sure the stars are random on every click/ also when changing pages"
+    Made star positions dynamically randomized on spawn and respawn
+

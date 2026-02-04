@@ -26,6 +26,7 @@
       />
     </noscript>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/widget.css" />
   </head>
   <body>
     <a class="skip-link visually-hidden" href="#main-content"
@@ -180,13 +181,11 @@
             />
             <h2>1 Hour Crossy Road Challenge</h2>
             <p>
-              Built using pygame in a one-hour coding challenge to
-              see how AI can assist in game development. Simple endless
-              runner where the player dodges obstacles to earn points.
+              Built using pygame in a one-hour coding challenge to see how AI
+              can assist in game development. Simple endless runner where the
+              player dodges obstacles to earn points.
             </p>
-            <p class="tech-stack">
-              Python, Pygame
-            </p>
+            <p class="tech-stack">Python, Pygame</p>
             <a
               href="https://github.com/ALthon199/1-Hour-Crossy-Road-Challenge"
               class="project-link"
@@ -196,15 +195,27 @@
             >
           </article>
 
-          
-          
+          <article class="project-card" id="api-widget">
+            <div id="widget-root" class="widget-root" aria-live="polite">
+              Loading widget…
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer role="contentinfo">
       <div class="footer-content container">
-        <p>&copy; 2024 Anthony Lin. All rights reserved.</p>
+        <p>
+          &copy; 2024 Anthony Lin. All rights reserved. | Background imagery
+          from
+          <a
+            href="https://apod.nasa.gov/apod/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >NASA APOD</a
+          >
+        </p>
         <div class="footer-links">
           <a
             href="https://github.com/ALthon199"
@@ -223,5 +234,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/widget.js" defer></script>
   </body>
 </html>

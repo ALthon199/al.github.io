@@ -1,0 +1,16 @@
+
+API KEY USAGE AND FUNCTIONALITY:
+
+When the website initially loads, a function immediately calls the NASA API, getting
+a JSON file with all the images/video data. When stars are cicked and/or the Surprise
+me button in the bottom right is clicked, this fetch is done again by querying with 
+a random date. This code does require a NASA API key, this can be simply done
+by https://api.nasa.gov/ and signing up for one. Once you have it, create a config.js file
+and add
+
+window.NASA_CONFIG = {
+  API_KEY: "YOUR_API_KEY",
+};
+
+The website will still load, just without the functionality.
+
