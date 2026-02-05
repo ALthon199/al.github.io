@@ -24,18 +24,14 @@ body.apod-bg::after {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: scale(1);
-  transition:
-    opacity 800ms ease,
-    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  will-change: opacity, transform;
+  transition: opacity 1000ms ease-in-out;
+  will-change: opacity;
   pointer-events: none;
   filter: brightness(0.7) contrast(0.9);
 }
 
 body.apod-bg-visible::after {
   opacity: 1;
-  transform: scale(1.03) translateY(-6px);
 }
 
 /* When APOD background is active, push the site's subtle gradient further back */

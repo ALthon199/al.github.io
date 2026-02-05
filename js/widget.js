@@ -57,7 +57,7 @@
     setTimeout(() => {
       document.body.classList.remove("apod-bg");
       document.body.style.removeProperty("--apod-bg-image");
-    }, 900);
+    }, 1000);
   }
 
   // Create or get the floating control panel for all pages
@@ -233,7 +233,7 @@
     document.body.appendChild(starsContainer);
   }
 
-  async function fetchAPOD(date) {
+  async function fetchAPOD(date, retryCount = 0) {
     const root = document.getElementById("widget-root");
     const hasRoot = !!root;
     if (hasRoot) {
@@ -252,6 +252,17 @@
       const res = await fetch(endpoint);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
+
+      // If video is returned, fetch a different random date (only images)
+      if (data.media_type === "video") {
+        if (retryCount < 10) {
+          console.log("Video found, fetching new date for image...");
+          const newDate = randomDate(new Date(MIN_DATE), new Date());
+          return fetchAPOD(newDate, retryCount + 1);
+        } else {
+          console.warn("Max retries reached, using video thumbnail");
+        }
+      }
 
       if (hasRoot) root.innerHTML = "";
 
@@ -280,29 +291,9 @@
           mediaWrap.style.display = "block";
         }
       } else if (data.media_type === "video") {
-        if (hasRoot) {
-          const embed = makeEmbedUrl(data.url);
-          const iframe = document.createElement("iframe");
-          iframe.className = "widget-video";
-          iframe.src = embed;
-          iframe.width = "560";
-          iframe.height = "315";
-          iframe.frameBorder = "0";
-          iframe.allow =
-            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-          iframe.allowFullscreen = true;
-          mediaWrap.appendChild(iframe);
-        }
-
+        // Fallback if max retries reached
         if (data.thumbnail_url) {
           setBackgroundImage(data.thumbnail_url);
-          if (hasRoot) {
-            const thumb = document.createElement("img");
-            thumb.className = "widget-thumb";
-            thumb.src = data.thumbnail_url;
-            thumb.alt = data.title || "Video thumbnail";
-            mediaWrap.appendChild(thumb);
-          }
         } else {
           clearBackground();
         }
@@ -362,9 +353,18 @@
 
   function initWidget(opts = {}) {
     const root = document.getElementById("widget-root");
-    // Always fetch APOD for background, even if no widget root exists
-    const today = formatDate(new Date());
-    fetchAPOD(opts.date || today);
+
+    // Try to set default background to static nasa-apod.jpg
+    const defaultImg = new Image();
+    defaultImg.src = "/assets/images/nasa-apod.jpg";
+    defaultImg.onload = () => {
+      setBackgroundImage("/assets/images/nasa-apod.jpg");
+    };
+    defaultImg.onerror = () => {
+      // Fallback: fetch today's APOD if nasa-apod.jpg doesn't exist
+      const today = formatDate(new Date());
+      fetchAPOD(opts.date || today);
+    };
 
     // Create floating controls on all pages
     const panel = ensureFloatingControls();
