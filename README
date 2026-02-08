@@ -12,5 +12,7 @@ window.NASA_CONFIG = {
   API_KEY: "YOUR_API_KEY",
 };
 
-The website will still load, just without the functionality.
+NOTE: There's also a DEMO_KEY given by NASA which is currrently being used for temporary
+exploration if an API key isn't given. THis will let the widget still function, however, its only
+up to 50 requests a day.
 
